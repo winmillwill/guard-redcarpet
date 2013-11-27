@@ -34,7 +34,7 @@ module Guard
     def get_output(file)
       file_dir = File.dirname(file)
       file_dir = File.join(@options[:output], file_dir) if @options[:output]
-      file_name = File.basename(file).split(".")[0..-2].join(".") # remove extension
+      file_name = File.basename(file).split(".")[0..-2].push('html').join(".") # switch extension
 
       file_dir == '' ? file_name : File.join(file_dir, file_name)
     end
